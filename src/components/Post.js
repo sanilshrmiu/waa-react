@@ -2,9 +2,13 @@ import React from "react";
 import "./Post.css";
 
 const Post = (props) => {
+  const handlePostClick = () => {
+    props.handleClick(props.post.id);
+  };
+
   return (
     <div className="card">
-      <div className="container">
+      <div className="container" onClick={handlePostClick}>
         <h4>
           <b>
             {props.post.id} | {props.post.title}
